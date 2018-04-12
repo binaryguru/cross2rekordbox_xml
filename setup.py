@@ -30,7 +30,8 @@ setup(
     author="André Perron",
     author_email="binaryguruca@yahoo.ca",
     license="MIT License",
-    packages=["elementtree"],
+    # packages=["elementtree"],
+    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     platforms="Python 1.5.2 and later.",
     classifiers=[
         'Development Status :: 3 - Alpha',
@@ -43,7 +44,6 @@ setup(
     keywords='utility',
     py_modules=["Cross2Rekordbox_XML"],
     install_requires=['elementtree'],
-    data_files=[('my_data', ['data/data_file'])],
     entry_points={
         'console_scripts': [
             'sample=sample:main',

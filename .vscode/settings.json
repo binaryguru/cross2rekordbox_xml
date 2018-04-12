@@ -1,1 +1,12 @@
-{}
+{
+    "python.autoComplete.extraPaths": [
+        "${workspaceFolder}/elementtree-1.2.6-20050316/elementtree"
+    ],
+    "python.autoComplete.preloadModules": [
+        "sys",
+        "argparse",
+        "elementtree"
+    ],
+    "python.pythonPath": "C:\\Python27\\python.exe",
+    "python.autoComplete.addBrackets": true
+}
