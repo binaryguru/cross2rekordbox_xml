@@ -40,6 +40,7 @@ import sys
 import argparse
 import elementtree.ElementTree as ET
 
+# Commandline argument parsing
 parser = argparse.ArgumentParser(prog='cross_rekordbox_xml_offset_fix',
                                  description='Fixes beatgrid offsets in exported rekordbox.xml file.')
 parser.add_argument('-d', '--dump', action='store_true',
@@ -50,7 +51,8 @@ parser.add_argument('-D', '--debug', action='store_true',
                     help='Enable debug mode')
 args = parser.parse_args()
 
-offset = float(0.024)
+# Initial variables
+OFFSET = float(0.024)
 input_file = open('m0du1us.mp3.xml', 'r')
 output_file = open('fixed_m0du1us.mp3.xml', 'w')
 entry_num = int(0)
@@ -96,10 +98,9 @@ else:
 
 tree = ET.ElementTree(file=input_file)
 collection_entries = tree.getroot().find('.//COLLECTION').get('Entries')
-#xml_comment = ET.Comment(text='_COMMENT_')
 
 if args.verbose:
-    print 'offset={}'.format(offset)
+    print 'OFFSET={}'.format(OFFSET)
     print 'input_file="{}"'.format(input_file.name)
     print 'output_file="{}"'.format(output_file.name)
     print 'COLLECTION Entries="{}"'.format(collection_entries)
@@ -117,7 +118,7 @@ for track_entry, track in enumerate(track_list):
     tempo_list = track.getiterator(tag='TEMPO')
     for tempo_entry, tempo in enumerate(tempo_list):
         tempo_inizio = tempo.get('Inizio')
-        tempo_inizio_fixed = float(tempo_inizio) + offset
+        tempo_inizio_fixed = float(tempo_inizio) + OFFSET
         tempo.set('Inizio', str(tempo_inizio_fixed))
         if args.verbose:
             print '    TEMPO Inizio="{}" -> {}'.format(
@@ -128,7 +129,7 @@ for track_entry, track in enumerate(track_list):
     position_mark_list = track.getiterator(tag='POSITION_MARK')
     for position_mark_entry, position_mark in enumerate(position_mark_list):
         position_mark_start = position_mark.get('Start')
-        position_mark_start_fixed = float(position_mark_start) + offset
+        position_mark_start_fixed = float(position_mark_start) + OFFSET
         position_mark.set('Start', str(position_mark_start_fixed))
         if args.verbose:
             print '    POSITION_MARK Start="{}" -> {}'.format(
@@ -137,13 +138,15 @@ for track_entry, track in enumerate(track_list):
             pass
 
 if args.dump:
+    # Add XML version and encoding to top of dump
     print '<?xml version="1.0" encoding="utf-8"?>\n'
-    ET.dump(tree)
+    ET.dump(tree)  # Dump XML tree to sys.stdout
     output_file.close
     input_file.close
     exit
 else:
     output_file.seek(0)
+    # Add XML version and encoding to top of file
     output_file.write('<?xml version="1.0" encoding="utf-8"?>\n')
     tree.write(output_file, encoding="utf-8")
     output_file.flush
