@@ -1,4 +1,5 @@
 {
+    "files.autoSave": "off",
     "python.autoComplete.extraPaths": [
         "${workspaceFolder}/elementtree-1.2.6-20050316/elementtree"
     ],
@@ -8,5 +9,17 @@
         "elementtree"
     ],
     "python.pythonPath": "C:\\Python27\\python.exe",
-    "python.autoComplete.addBrackets": true
+    "python.autoComplete.addBrackets": true,
+    // General linting
+    "python.linting.enabled": true,
+    "python.linting.lintOnSave": true,
+    "python.linting.maxNumberOfProblems": 100,
+    "python.linting.ignorePatterns": [
+        ".vscode/*.py",
+        "**/site-packages/**/*.py"
+    ],
+    // pylint
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": "pylint",
+    "python.linting.pylintArgs": [],
 }
