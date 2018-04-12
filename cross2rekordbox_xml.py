@@ -34,28 +34,29 @@ SOFTWARE.
 """
 
 import sys
-import argparse
+import argparse as AP
 import elementtree.ElementTree as ET
 
 # Commandline argument parsing
-parser = argparse.ArgumentParser(prog='cross2rekordbox_xml',
-                                 description='Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.')
-parser.add_argument('-d', '--dump', action='store_true',
+PARSER = AP.ArgumentParser(prog='cross2rekordbox_xml',
+                           description='Tool to fix beatgrid offsets in'
+                           'rekordbox.xml exported by Mixvibes Cross.')
+PARSER.add_argument('-d', '--dump', action='store_true',
                     help='Dump fixed XML to standard output instead of file')
-parser.add_argument('-v', '--verbose', action='store_true',
+PARSER.add_argument('-v', '--verbose', action='store_true',
                     help='Display a list of items fixed in the output file')
-parser.add_argument('-D', '--debug', action='store_true',
+PARSER.add_argument('-D', '--debug', action='store_true',
                     help='Enable debug mode')
-args = parser.parse_args()
+ARGS = PARSER.parse_args()
 
 # Initial variables
 OFFSET = float(0.024)
-input_file = open('m0du1us.mp3.xml', 'r')
-output_file = open('fixed_m0du1us.mp3.xml', 'w')
-entry_num = int(0)
+INPUT_FILE = open('m0du1us.mp3.xml', 'r')
+OUTPUT_FILE = open('fixed_m0du1us.mp3.xml', 'w')
+ENTRY_NUM = int(0)
 
-if args.debug:
-    print args.accumulate(args.integers)
+if ARGS.debug:
+    print ARGS.accumulate(ARGS.integers)
     print 'sys.api_version: {}'.format(sys.api_version)
     print 'sys.argv: {}'.format(sys.argv)
     print 'sys.builtin_module_names: {}'.format(sys.builtin_module_names)
@@ -93,20 +94,20 @@ if args.debug:
 else:
     pass
 
-tree = ET.ElementTree(file=input_file)
-collection_entries = tree.getroot().find('.//COLLECTION').get('Entries')
+TREE = ET.ElementTree(file=INPUT_FILE)
+COLLECTION_ENTRIES = TREE.getroot().find('.//COLLECTION').get('Entries')
 
-if args.verbose:
+if ARGS.verbose:
     print 'OFFSET={}'.format(OFFSET)
-    print 'input_file="{}"'.format(input_file.name)
-    print 'output_file="{}"'.format(output_file.name)
-    print 'COLLECTION Entries="{}"'.format(collection_entries)
+    print 'INPUT_FILE="{}"'.format(INPUT_FILE.name)
+    print 'OUTPUT_FILE="{}"'.format(OUTPUT_FILE.name)
+    print 'COLLECTION Entries="{}"'.format(COLLECTION_ENTRIES)
 else:
     pass
 
-track_list = tree.getroot().findall('.//COLLECTION/TRACK')
-for track_entry, track in enumerate(track_list):
-    if args.verbose:
+TRACK_LIST = TREE.getroot().findall('.//COLLECTION/TRACK')
+for track_entry, track in enumerate(TRACK_LIST):
+    if ARGS.verbose:
         print '{}: TRACK TrackID="{}"'.format(
             track_entry, track.get('TrackID'))
     else:
@@ -117,7 +118,7 @@ for track_entry, track in enumerate(track_list):
         tempo_inizio = tempo.get('Inizio')
         tempo_inizio_fixed = float(tempo_inizio) + OFFSET
         tempo.set('Inizio', str(tempo_inizio_fixed))
-        if args.verbose:
+        if ARGS.verbose:
             print '    TEMPO Inizio="{}" -> {}'.format(
                 tempo_inizio, tempo.get('Inizio'))
         else:
@@ -128,25 +129,25 @@ for track_entry, track in enumerate(track_list):
         position_mark_start = position_mark.get('Start')
         position_mark_start_fixed = float(position_mark_start) + OFFSET
         position_mark.set('Start', str(position_mark_start_fixed))
-        if args.verbose:
+        if ARGS.verbose:
             print '    POSITION_MARK Start="{}" -> {}'.format(
                 position_mark_start, position_mark.get('Start'))
         else:
             pass
 
-if args.dump:
+if ARGS.dump:
     # Add XML version and encoding to top of dump
     print '<?xml version="1.0" encoding="utf-8"?>\n'
-    ET.dump(tree)  # Dump XML tree to sys.stdout
-    output_file.close
-    input_file.close
-    exit
+    ET.dump(TREE)  # Dump XML tree to sys.stdout
+    OUTPUT_FILE.close()
+    INPUT_FILE.close()
+    exit()
 else:
-    output_file.seek(0)
+    OUTPUT_FILE.seek(0)
     # Add XML version and encoding to top of file
-    output_file.write('<?xml version="1.0" encoding="utf-8"?>\n')
-    tree.write(output_file, encoding="utf-8")
-    output_file.flush
-    output_file.close
-    input_file.close
-    exit
+    OUTPUT_FILE.write('<?xml version="1.0" encoding="utf-8"?>\n')
+    TREE.write(OUTPUT_FILE, encoding="utf-8")
+    OUTPUT_FILE.flush()
+    OUTPUT_FILE.close()
+    INPUT_FILE.close()
+    exit()
