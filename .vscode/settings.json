@@ -13,13 +13,5 @@
     // General linting
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
-    "python.linting.maxNumberOfProblems": 100,
-    "python.linting.ignorePatterns": [
-        ".vscode/*.py",
-        "**/site-packages/**/*.py"
-    ],
-    // pylint
-    "python.linting.pylintEnabled": true,
-    "python.linting.pylintPath": "pylint",
-    "python.linting.pylintArgs": [],
+    "python.linting.pylintUseMinimalCheckers": false,
 }

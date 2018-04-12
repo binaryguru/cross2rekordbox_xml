@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# Cross2Rekordbox_XML
-# $Id: Cross2Rekordbox_XML.py 0000 2018-04-12 01:28:00 m0du1us $
-#
 # Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.
 #
 # Copyright (c) 2018-2019 by André Perron.  All rights reserved.
@@ -41,7 +38,7 @@ import argparse
 import elementtree.ElementTree as ET
 
 # Commandline argument parsing
-parser = argparse.ArgumentParser(prog='Cross2Rekordbox_XML',
+parser = argparse.ArgumentParser(prog='cross2rekordbox_xml',
                                  description='Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.')
 parser.add_argument('-d', '--dump', action='store_true',
                     help='Dump fixed XML to standard output instead of file')

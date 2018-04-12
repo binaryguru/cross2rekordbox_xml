@@ -7,6 +7,7 @@
         "ms-python.python",
         "DotJoshJohnson.xml",
         "DavidAnson.vscode-markdownlint",
+        "robertohuertasm.vscode-icons",
         "gerane.theme-bashling"
     ]
 }
