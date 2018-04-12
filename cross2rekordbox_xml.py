@@ -41,8 +41,8 @@ import argparse
 import elementtree.ElementTree as ET
 
 # Commandline argument parsing
-parser = argparse.ArgumentParser(prog='cross_rekordbox_xml_offset_fix',
-                                 description='Fixes beatgrid offsets in exported rekordbox.xml file.')
+parser = argparse.ArgumentParser(prog='Cross2Rekordbox_XML',
+                                 description='Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.')
 parser.add_argument('-d', '--dump', action='store_true',
                     help='Dump fixed XML to standard output instead of file')
 parser.add_argument('-v', '--verbose', action='store_true',
