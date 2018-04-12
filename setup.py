@@ -32,7 +32,7 @@ setup(
     license="MIT License",
     packages=["elementtree"],
     platforms="Python 1.5.2 and later.",
-    classifiers=[  # Optional
+    classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
         'Topic :: Software Development :: Build Tools',
@@ -42,10 +42,9 @@ setup(
     ],
     keywords='utility',
     py_modules=["cross2rekordbox_xml"],
-    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     install_requires=['elementtree'],
     data_files=[('my_data', ['data/data_file'])],
-    entry_points={  # Optional
+    entry_points={
         'console_scripts': [
             'sample=sample:main',
         ],
