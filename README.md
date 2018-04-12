@@ -1,18 +1,27 @@
-# A sample Python project
+Cross2Rekordbox_XML
+===================
+Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.
 
-A sample project that exists as an aid to the [Python Packaging User
-Guide][packaging guide]'s [Tutorial on Packaging and Distributing
-Projects][distribution tutorial].
+_**This project is still in alpha!**_
 
-This project does not aim to cover best practices for Python project
-development as a whole. For example, it does not provide guidance or tool
-recommendations for version control, documentation, or testing.
+This tool has been tested on the following software versions:
+
+* Cross 3.4.3
+* Rekordbox 3.3.0
+
+```text
+usage: Cross2Rekordbox_XML [-h] [-d] [-v] [-D]
+
+Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.
+
+optional arguments:
+  -h, --help     show this help message and exit
+  -d, --dump     Dump fixed XML to standard output instead of file
+  -v, --verbose  Display a list of items fixed in the output file
+  -D, --debug    Enable debug mode
+```
 
 [The source for this project is available here][src].
-
-Most of the configuration for a Python project is done in the `setup.py` file,
-an example of which is included in this project. You should edit this file
-accordingly to adapt this sample project to your needs.
 
 ----
 
@@ -29,9 +38,7 @@ usage examples, etc. Generally, including the project changelog in here is not a
 good idea, although a simple “What's New” section for the most recent version
 may be appropriate.
 
-[packaging guide]: https://packaging.python.org
-[distribution tutorial]: https://packaging.python.org/en/latest/distributing.html
-[src]: https://github.com/pypa/sampleproject
+[src]: https://github.com/binaryguru/cross2rekordbox_xml
 [rst]: http://docutils.sourceforge.net/rst.html
 [md]: https://tools.ietf.org/html/rfc7764#section-3.5 "CommonMark variant"
 [md use]: https://packaging.python.org/specifications/core-metadata/#description-content-type-optional
