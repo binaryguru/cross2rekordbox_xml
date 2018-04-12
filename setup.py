@@ -23,7 +23,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     name="cross2rekordbox_xml",
     version="2018.04a1",
-    description="Fixes beatgrid offsets in exported rekordbox.xml file.",
+    description="Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.",
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/binaryguru/cross2rekordbox_xml',
