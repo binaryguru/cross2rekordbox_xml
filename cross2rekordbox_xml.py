@@ -1,8 +1,9 @@
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# cross2rekordbox_xml.py
+# File: cross2rekordbox_xml.py
 # Author: André Perron
 # E-mail: andre.perron@gmail.com
-# Version: 0.1
+
 
 import sys
 import argparse
