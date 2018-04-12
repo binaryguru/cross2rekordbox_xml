@@ -3,3 +3,18 @@ include *.md
 
 # Include the license file
 include LICENSE
+
+# Include required modules
+recursive-include elementtree-1.2.6-20050316 *
+
+# Include source code
+include Cross2Rekordbox_XML.py
+
+# Include package setup files
+include setup.*
+
+# Visual Studio Code settings
+recursive-include .vscode *
+
+# EditorConfig
+include .editorconfig
