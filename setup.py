@@ -21,7 +21,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 # Fields marked as "Optional" may be commented out.
 
 setup(
-    name="cross2rekordbox_xml",
+    name="Cross2Rekordbox_XML",
     version="2018.04a1",
     description="Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.",
     long_description=long_description,
@@ -41,7 +41,7 @@ setup(
         'Programming Language :: Python :: 2.7',
     ],
     keywords='utility',
-    py_modules=["cross2rekordbox_xml"],
+    py_modules=["Cross2Rekordbox_XML"],
     install_requires=['elementtree'],
     data_files=[('my_data', ['data/data_file'])],
     entry_points={
