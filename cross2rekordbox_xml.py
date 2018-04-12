@@ -1,15 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-#
-# Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.
-#
-# Copyright (c) 2018-2019 by André Perron.  All rights reserved.
-#
-# binaryguruca@yahoo.ca
-# https://github.com/binaryguru
-# https://binaryguru.wordpress.com
 
-"""
+"""Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.
+
+Copyright (c) 2018-2019 by André Perron.  All rights reserved.
+https://github.com/binaryguru/cross2rekordbox_xml
+
 MIT License
 
 Copyright (c) 2018 André Perron
@@ -30,8 +26,7 @@ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-"""
+SOFTWARE."""
 
 import sys
 import argparse as AP
