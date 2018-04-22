@@ -103,3 +103,5 @@ ENV/
 # test data
 m0du1us.mp3.xml
 fixed_m0du1us.mp3.xml
+run.log
+dump.xml
