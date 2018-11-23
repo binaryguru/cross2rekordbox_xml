@@ -1,16 +1,28 @@
-Cross2Rekordbox_XML
-===================
-Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.
+# Cross2Rekordbox_XML
 
-_**This project is still in alpha!**_
+Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.
 
 This tool has been tested on the following software versions:
 
 * Cross 3.4.3
 * Rekordbox 3.3.0
 
+_**This project is still in alpha!**_
+
+---
+
+## Setup
+
+To install setup environment run in terminal:
+
 ```text
-usage: Cross2Rekordbox_XML [-h] [-d] [-v] [-D]
+python setup.py install
+```
+
+## Usage
+
+```text
+Cross2Rekordbox_XML [-h] [-d] [-v] [-D]
 
 Tool to fix beatgrid offsets in rekordbox.xml exported by Mixvibes Cross.
 
@@ -23,7 +35,7 @@ optional arguments:
 
 [The source for this project is available here][src].
 
-----
+---
 
 This is the README file for the project.
 
