@@ -8,11 +8,12 @@
         "argparse",
         "elementtree"
     ],
-    "python.pythonPath": "C:\\ProgramData\\Miniconda2\\envs\\Python27\\python.exe",
+    "python.pythonPath": "C:\\ProgramData\\Miniconda2\\envs\\cross2rekordbox-xml\\python.exe",
     "python.autoComplete.addBrackets": true,
     // General linting
     "python.linting.enabled": true,
     "python.linting.lintOnSave": true,
     "python.linting.pylintUseMinimalCheckers": false,
     "terminal.integrated.scrollback": 10000,
+    "python.jediEnabled": false,
 }
